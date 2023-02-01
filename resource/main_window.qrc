@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/HideKakaoTalkAd">
+        <file>background.PNG</file>
+        <file>icon.ico</file>
+    </qresource>
+</RCC>
