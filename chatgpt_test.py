@@ -2,10 +2,27 @@ import json
 import urllib.request
 import openai
 
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QDialog, QApplication
+from PySide6.QtGui import QIcon, QPixmap
+
+from resource.cacaotalk_2 import Ui_Dialog
+
 
 papago_client_id = 'OK7Kx4_4mYQ73cdvl9wq'   # 파파고 API ID
 papago_client_secret = 'n7VHviMSrC'     # 파파고 API secret 키
-openai.api_key = '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'  # openai API 키
+openai.api_key = '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'  # openai API 키
+
+
+# class CacaoTalk(QDialog, Ui_Dialog):
+#
+#     def __init__(self):
+#         super().__init__()
+#         self.setupUi(self)
+#         self.setWindowIcon(QIcon('resource/icon.ico'))
+#         # self.setFixedSize(483, 679)
+#         self.label.setPixmap(QPixmap(u"resource/background.png").scaled(self.width(), self.height(),
+#                                                                         aspectMode=Qt.KeepAspectRatio))
 
 
 def papago(text: str, current_lang_type: str, convert_lang_type: str):
@@ -62,5 +79,14 @@ while True:
         break
 
     response = generate_reponse(papago(user_input, current_lang, convert_lang))
-    print(f'ChatGPT: {papago(response, convert_lang, current_lang)}')   # 영어로 물어보면 한글로 대답, 한글로 물어보면 영어로 대답
+    # print(f'ChatGPT: {papago(response, convert_lang, current_lang)}')   # 영어로 물어보면 한글로 대답, 한글로 물어보면 영어로 대답
     print(f'ChatGPT: {papago(response, "en", "ko")}')   # 무조건 한글로 대답. 위 두 개중 쓰고싶은거 아무거나
+
+
+# if __name__ == '__main__':
+#     import sys
+#
+#     app = QApplication(sys.argv)
+#     window = CacaoTalk()
+#     window.show()
+#     sys.exit(app.exec())
