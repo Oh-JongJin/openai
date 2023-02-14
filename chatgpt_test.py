@@ -11,7 +11,7 @@ from resource.cacaotalk_2 import Ui_Dialog
 
 papago_client_id = 'OK7Kx4_4mYQ73cdvl9wq'   # 파파고 API ID
 papago_client_secret = 'n7VHviMSrC'     # 파파고 API secret 키
-openai.api_key = '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'  # openai API 키
+openai.api_key = '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'  # openai API 키
 
 
 # class CacaoTalk(QDialog, Ui_Dialog):
